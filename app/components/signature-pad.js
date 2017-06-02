@@ -1,0 +1,1 @@
+export { default } from 'ember-signature-pad/components/signature-pad';
