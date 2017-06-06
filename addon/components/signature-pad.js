@@ -3,9 +3,13 @@ import layout from '../templates/components/signature-pad';
 
 export default Ember.Component.extend({
   layout: layout,
+  data: '',
+  signaturePad: '',
+
   didInsertElement: function() {
     var canvas = document.querySelector("canvas");
     var signaturePad = new SignaturePad(canvas);
+    this.set('signaturePad', signaturePad);
 
     function resizeCanvas() {
         var ratio =  Math.max(window.devicePixelRatio || 1, 1);
@@ -18,9 +22,20 @@ export default Ember.Component.extend({
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
 
-    $("#save").click(function() {
-      var sign = signaturePad.toDataURL("image/svg+xml"); // save image as SVG
-      console.log(sign);
-    })
+    /*this.$().find('#save').click(function() {
+      window.open(signaturePad.toDataURL('image/svg+xml'));
+    });
+
+    this.$().find('#clear').click(function() {
+      signaturePad.clear();
+    });*/
+  },
+
+  actions: {
+    accepted: function() {
+      let signaturePad = this.get('signaturePad');
+      this.set('data', signaturePad.toDataURL('image/svg+xml'));
+      this.sendAction('submit', this.get('data'));
+    }
   }
 });
