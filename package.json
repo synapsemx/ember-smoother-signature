@@ -1,6 +1,6 @@
 {
   "name": "ember-signature-pad",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "an Ember Addon implementation of Signature Pad package",
   "directories": {
     "doc": "doc",
