@@ -1,1 +1,1 @@
-export { default } from 'ember-signature-pad/components/signature-pad';
+export { default } from 'ember-smoother-signature/components/signature-pad';

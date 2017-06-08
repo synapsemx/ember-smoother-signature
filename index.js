@@ -2,7 +2,7 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-signature-pad',
+  name: 'ember-smoother-signature',
   contentFor: function(type, config) {
     if (type === 'head') {
       return '';
