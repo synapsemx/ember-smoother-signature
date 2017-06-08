@@ -36,6 +36,10 @@ export default Ember.Component.extend({
       let signaturePad = this.get('signaturePad');
       this.set('data', signaturePad.toDataURL('image/svg+xml'));
       this.sendAction('submit', this.get('data'));
+    },
+    clear: function() {
+      let signaturePad = this.get('signaturePad');
+      signaturePad.clear();
     }
   }
 });
