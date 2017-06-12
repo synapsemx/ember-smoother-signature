@@ -1,8 +1,17 @@
 ember-smoother-signature
 ==============================================================================
 
-[![Ember Observer Score](https://emberobserver.com/badges/ember-smoother-signature.svg)](https://emberobserver.com/addons/ember-smoother-signature)
-[ember cli](https://ember-cli.com/) addon for [signature_pad](https://github.com/szimek/signature_pad)
+[![Ember Observer Score](https://emberobserver.com/badges/ember-smoother-signature.svg)](https://emberobserver.com/addons/ember-smoother-signature) [![npm version](https://badge.fury.io/js/ember-smoother-signature.svg)](https://badge.fury.io/js/ember-smoother-signature) [![Code Climate](https://codeclimate.com/github/synapsemx/ember-smoother-signature/badges/gpa.svg)](https://codeclimate.com/github/synapsemx/ember-smoother-signature) [![Issue Count](https://codeclimate.com/github/synapsemx/ember-smoother-signature/badges/issue_count.svg)](https://codeclimate.com/github/synapsemx/ember-smoother-signature) ![ember-badge](http://embadge.io/v1/badge.svg?start=1.10.0)
+
+This addon is a wrapper for the _**excellent**_ [signature_pad](https://github.com/szimek/signature_pad) library.
+
+
+### Works great on a desktop...
+![Desktop](http://i.imgur.com/Ss41wRX.png)
+
+### ...or on a mobile device!
+![Mobile](http://i.imgur.com/MrWFxXs.png)
+
 
 Installation
 ------------------------------------------------------------------------------
@@ -20,7 +29,9 @@ Use ember-smoother-signature in your template:
 {{signature-pad	sendAction=command}}
 ```
 
-If you look at signature_pad, it has many more options. We'll incorporate all that soon, but if you have time on your hands then feel free to submit a PR!
+>DISCLAIMER: If you look at signature_pad, it has many more options.
+>
+>We'll incorporate all that soon, but if you have time on your hands then feel free to submit a PR!
 
 Documentation
 ------------------------------------------------------------------------------
@@ -58,6 +69,4 @@ License
 ------------------------------------------------------------------------------
 
 [MIT License](https://opensource.org/licenses/mit-license.php)
-
 [embadge]: http://embadge.io/
-[ember-badge]: http://embadge.io/v1/badge.svg?start=2.12.1
