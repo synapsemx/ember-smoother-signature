@@ -32,6 +32,9 @@ export default Ember.Component.extend({
     clear: function() {
       let signaturePad = this.get('signaturePad');
       signaturePad.clear();
+    },
+    back: function() {
+      this.sendAction('back');
     }
   }
 });
