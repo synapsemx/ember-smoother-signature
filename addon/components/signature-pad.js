@@ -21,14 +21,6 @@ export default Ember.Component.extend({
 
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
-
-    /*this.$().find('#save').click(function() {
-      window.open(signaturePad.toDataURL('image/svg+xml'));
-    });
-
-    this.$().find('#clear').click(function() {
-      signaturePad.clear();
-    });*/
   },
 
   actions: {
