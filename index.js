@@ -14,7 +14,7 @@ module.exports = {
       if (config.enviroment === 'test') {
         return '';
       } else {
-        return '<script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>';
+        return '<script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>';
       }
     }
   }

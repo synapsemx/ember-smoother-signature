@@ -9,18 +9,22 @@ export default Ember.Component.extend({
   didInsertElement: function() {
     var canvas = document.querySelector("canvas");
     var signaturePad = new SignaturePad(canvas);
-    this.set('signaturePad', signaturePad);
-
+    this.set('signaturePad', signaturePad);  
+    
     function resizeCanvas() {
-        var ratio =  Math.max(window.devicePixelRatio || 1, 1);
-        canvas.width = canvas.offsetWidth * ratio;
-        canvas.height = canvas.offsetHeight * ratio;
-        canvas.getContext("2d").scale(ratio, ratio);
-        signaturePad.clear(); // otherwise isEmpty() might return incorrect value
+      var ratio =  Math.max(window.devicePixelRatio || 1, 1);
+      canvas.width = canvas.offsetWidth * ratio;
+      canvas.height = canvas.offsetHeight * ratio;
+      canvas.getContext("2d").scale(ratio, ratio);
+      signaturePad.clear(); // otherwise isEmpty() might return incorrect value
     }
 
     window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
+    if (this.get('isOnModal')) {
+      Ember.run.later(resizeCanvas, 1000);
+    } else {
+      resizeCanvas();
+    }
   },
 
   actions: {
@@ -29,10 +33,12 @@ export default Ember.Component.extend({
       this.set('data', signaturePad.toDataURL('image/svg+xml'));
       this.sendAction('submit', this.get('data'));
     },
+
     clear: function() {
       let signaturePad = this.get('signaturePad');
       signaturePad.clear();
     },
+    
     back: function() {
       this.sendAction('back');
     }
