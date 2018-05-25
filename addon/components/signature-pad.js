@@ -6,11 +6,15 @@ export default Ember.Component.extend({
   data: '',
   signaturePad: '',
 
+  backBtnClass: 'btn btn-default',
+  clearBtnClass: 'btn btn-default',
+  acceptBtnClass: 'btn btn-success',
+
   didInsertElement: function() {
-    var canvas = document.querySelector("canvas");
+    var canvas = document.getElementById("sign-canvas");
     var signaturePad = new SignaturePad(canvas);
-    this.set('signaturePad', signaturePad);  
-    
+    this.set('signaturePad', signaturePad);
+
     function resizeCanvas() {
       var ratio =  Math.max(window.devicePixelRatio || 1, 1);
       canvas.width = canvas.offsetWidth * ratio;
@@ -38,7 +42,7 @@ export default Ember.Component.extend({
       let signaturePad = this.get('signaturePad');
       signaturePad.clear();
     },
-    
+
     back: function() {
       this.sendAction('back');
     }
