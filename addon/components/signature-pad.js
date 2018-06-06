@@ -7,7 +7,12 @@ export default Ember.Component.extend({
   signaturePad: '',
 
   backBtnClass: 'btn btn-default',
+  backBtnText: 'Back',
+
   clearBtnClass: 'btn btn-default',
+  clearBtnText: 'Clear',
+
+  acceptBtnText: 'Authorize',
   acceptBtnClass: 'btn btn-success',
 
   didInsertElement: function() {
