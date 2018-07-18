@@ -1,13 +1,13 @@
 {
   "name": "ember-smoother-signature",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "an Ember Addon implementation of Signature Pad package",
   "keywords": [
     "ember-addon"
   ],
   "repository": "https://github.com/synapsemx/ember-smoother-signature.git",
   "license": "MIT",
-  "author": "Ramon Zuniga",
+  "author": "SynapseMX",
   "directories": {
     "doc": "doc",
     "test": "tests"
