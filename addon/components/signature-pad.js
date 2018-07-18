@@ -29,6 +29,8 @@ export default Ember.Component.extend({
     }
 
     window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("orientationchange", resizeCanvas);
+
     if (this.get('isOnModal')) {
       Ember.run.later(resizeCanvas, 1000);
     } else {

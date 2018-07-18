@@ -1,5 +1,4 @@
 ember-smoother-signature
-==============================================================================
 
 [![Ember Observer Score](https://emberobserver.com/badges/ember-smoother-signature.svg)](https://emberobserver.com/addons/ember-smoother-signature) [![npm version](https://badge.fury.io/js/ember-smoother-signature.svg)](https://badge.fury.io/js/ember-smoother-signature) [![Code Climate](https://codeclimate.com/github/synapsemx/ember-smoother-signature/badges/gpa.svg)](https://codeclimate.com/github/synapsemx/ember-smoother-signature) [![Issue Count](https://codeclimate.com/github/synapsemx/ember-smoother-signature/badges/issue_count.svg)](https://codeclimate.com/github/synapsemx/ember-smoother-signature) ![ember-badge](http://embadge.io/v1/badge.svg?start=1.10.0)
 
@@ -33,34 +32,30 @@ Use ember-smoother-signature in your template:
 >
 >We'll incorporate all that soon, but if you have time on your hands then feel free to submit a PR!
 
-Documentation
-------------------------------------------------------------------------------
-
-[Information for using signature_pad](https://github.com/szimek/signature_pad#options)
-
 Contributing
 ------------------------------------------------------------------------------
 
 ### Installation
 
 * `git clone` this repository
+* `cd ember-smoother-signature`
 * `npm install`
-* `bower install`
 
-### Running
+### Linting
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+* `npm run lint:js`
+* `npm run lint:js -- --fix`
 
-### Running Tests
+### Running tests
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+* `ember test` – Runs the test suite on the current Ember version
+* `ember test --server` – Runs the test suite in "watch mode"
+* `ember try:each` – Runs the test suite against multiple Ember versions
 
-### Building
+### Running the dummy application
 
-* `ember build`
+* `ember serve`
+* Visit the dummy application at [http://localhost:4200](http://localhost:4200).
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
 
@@ -68,5 +63,5 @@ For more information on using ember-cli, visit [https://ember-cli.com/](https://
 License
 ------------------------------------------------------------------------------
 
-[MIT License](https://opensource.org/licenses/mit-license.php)
+This project is licensed under the [MIT License](LICENSE.md).
 [embadge]: http://embadge.io/
