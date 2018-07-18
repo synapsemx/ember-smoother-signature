@@ -1,6 +1,6 @@
 ember-smoother-signature
 
-[![Ember Observer Score](https://emberobserver.com/badges/ember-smoother-signature.svg)](https://emberobserver.com/addons/ember-smoother-signature) [![npm version](https://badge.fury.io/js/ember-smoother-signature.svg)](https://badge.fury.io/js/ember-smoother-signature) [![Code Climate](https://codeclimate.com/github/synapsemx/ember-smoother-signature/badges/gpa.svg)](https://codeclimate.com/github/synapsemx/ember-smoother-signature) [![Issue Count](https://codeclimate.com/github/synapsemx/ember-smoother-signature/badges/issue_count.svg)](https://codeclimate.com/github/synapsemx/ember-smoother-signature) ![ember-badge](http://embadge.io/v1/badge.svg?start=1.10.0)
+[![Ember Observer Score](https://emberobserver.com/badges/ember-smoother-signature.svg)](https://emberobserver.com/addons/ember-smoother-signature) [![npm version](https://badge.fury.io/js/ember-smoother-signature.svg)](https://badge.fury.io/js/ember-smoother-signature) [![Code Climate](https://codeclimate.com/github/synapsemx/ember-smoother-signature/badges/gpa.svg)](https://codeclimate.com/github/synapsemx/ember-smoother-signature) [![Issue Count](https://codeclimate.com/github/synapsemx/ember-smoother-signature/badges/issue_count.svg)](https://codeclimate.com/github/synapsemx/ember-smoother-signature)
 
 This addon is a wrapper for the _**excellent**_ [signature_pad](https://github.com/szimek/signature_pad) library.
 
