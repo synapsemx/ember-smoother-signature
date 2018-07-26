@@ -25,7 +25,10 @@ Usage
 
 Use ember-smoother-signature in your template:
 ```
-{{signature-pad	sendAction=command}}
+{{signature-pad
+    submit=(action 'YOUR_ACTION')
+    back=(action 'YOUR_ACTION')
+}}
 ```
 
 >DISCLAIMER: If you look at signature_pad, it has many more options.
