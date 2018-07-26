@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { later } from '@ember/runloop';
 import layout from '../templates/components/signature-pad';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout: layout,
   data: '',
   signaturePad: '',
@@ -15,43 +16,67 @@ export default Ember.Component.extend({
   acceptBtnText: 'Authorize',
   acceptBtnClass: 'btn btn-success',
 
-  didInsertElement: function() {
-    var canvas = document.getElementById("sign-canvas");
-    var signaturePad = new SignaturePad(canvas);
-    this.set('signaturePad', signaturePad);
+  resizeCanvas() {
+    const {
+      canvas,
+      signaturePad
+    } = this.getProperties('canvas', 'signaturePad')
 
-    function resizeCanvas() {
-      var ratio =  Math.max(window.devicePixelRatio || 1, 1);
-      canvas.width = canvas.offsetWidth * ratio;
-      canvas.height = canvas.offsetHeight * ratio;
-      canvas.getContext("2d").scale(ratio, ratio);
-      signaturePad.clear(); // otherwise isEmpty() might return incorrect value
-    }
+    const ratio =  Math.max(window.devicePixelRatio || 1, 1)
 
-    window.addEventListener("resize", resizeCanvas);
-    window.addEventListener("orientationchange", resizeCanvas);
+    canvas.width = canvas.offsetWidth * ratio
+    canvas.height = canvas.offsetHeight * ratio
+    canvas.getContext('2d').scale(ratio, ratio)
+    signaturePad.clear() // otherwise isEmpty() might return incorrect value
+  },
+
+  init: function () {
+    this._super(...arguments)
+    this.resizeCanvas = this.resizeCanvas.bind(this)
+  },
+
+  didInsertElement() {
+    const canvas = this.element.querySelector('canvas')
+    const signaturePad = new window.SignaturePad(canvas)
+
+    this.set('canvas', canvas)
+    this.set('signaturePad', signaturePad)
+
+    window.addEventListener('resize', this.resizeCanvas)
+    window.addEventListener('orientationchange', this.resizeCanvas)
 
     if (this.get('isOnModal')) {
-      Ember.run.later(resizeCanvas, 1000);
+      later(this.resizeCanvas, 1000)
     } else {
-      resizeCanvas();
+      this.resizeCanvas()
     }
   },
 
+  willDestroyElement() {
+    window.removeEventListener('resize', this.resizeCanvas)
+    window.removeEventListener('orientationchange', this.resizeCanvas)
+  },
+
+  submit() {},
+  back() {},
+
   actions: {
-    accepted: function() {
-      let signaturePad = this.get('signaturePad');
-      this.set('data', signaturePad.toDataURL('image/svg+xml'));
-      this.sendAction('submit', this.get('data'));
+    accepted() {
+      const signaturePad = this.get('signaturePad')
+      const isEmpty = signaturePad.isEmpty()
+      const data = isEmpty ? '' : signaturePad.toDataURL('image/svg+xml')
+
+      this.set('data', data)
+      this.get('submit')(this.get('data'))
     },
 
-    clear: function() {
-      let signaturePad = this.get('signaturePad');
+    clear() {
+      const signaturePad = this.get('signaturePad');
       signaturePad.clear();
     },
 
-    back: function() {
-      this.sendAction('back');
+    back() {
+      this.get('back')(this.get('data'))
     }
   }
 });
