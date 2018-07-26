@@ -1,6 +1,6 @@
 {
   "name": "ember-smoother-signature",
-  "version": "0.0.9",
+  "version": "0.10.0",
   "description": "an Ember Addon implementation of Signature Pad package",
   "keywords": [
     "ember-addon"
